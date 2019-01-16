@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Al Boughaz</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class='container'>
+        <div id="html">
+            <button data-toggle="modal" data-backdrop="false" href="#form" class="btn btn-primary">Information</button>
+        </div>
+        <div class="modal fade" id="form">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">x</button>
+                        <h4 class="modal-title pull-left">Your details:</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="test.php">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"> </div>
+
+                            <button type="submit" class="btn btn-default">Enter</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-info" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src='assets/jquery-3.3.1.js'></script>
+    <script src='assets/bootstrap/js/bootstrap.js'></script>
+    <script>
+        $(function() {
+            $("form").submit(function(e) {
+                e.preventDefault();
+                var $form = $(this);
+                $.post($form.attr("action"), $form.serialize())
+                    .done(function(data) {
+                        $("#html").html(data);
+                        $("#form").modal("hide");
+                    })
+                    .fail(function() {
+                        alert("it doesn’t work yet...");
+                    });
+            });
+        });
+
+    </script>
+</body>
+
+</html>
