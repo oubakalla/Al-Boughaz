@@ -21,7 +21,7 @@
                         <h4 class="modal-title pull-left">Log in:</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="test.php">
+                        <form action="index.php">
                             <div class="form-group">
                                 <label for="name">Username</label>
                                 <input type="text" class="form-control" name="username" id="username" placeholder="Username">
