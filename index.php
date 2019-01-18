@@ -5,29 +5,30 @@
     <meta charset="UTF-8">
     <title>Al Boughaz</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
     <div class='container'>
         <div id="html">
-            <button data-toggle="modal" data-backdrop="false" href="#form" class="btn btn-primary">Information</button>
+            <button id="logInButton" data-toggle="modal" data-backdrop="false" href="#form" class="btn btn-primary col-xs-2 col-xs-push-5 text-center">Log in</button>
         </div>
         <div class="modal fade" id="form">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">x</button>
-                        <h4 class="modal-title pull-left">Your details:</h4>
+                        <h4 class="modal-title pull-left">Log in:</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="test.php">
+                        <form action="index.php">
                             <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Your name">
+                                <label for="name">Username</label>
+                                <input type="text" class="form-control" name="username" id="username" placeholder="Username">
                             </div>
                             <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"> </div>
+                                <label for="email">Password</label>
+                                <input type="email" class="form-control" name="password" id="password" placeholder="Password"> </div>
 
                             <button type="submit" class="btn btn-default">Enter</button>
                         </form>
@@ -39,8 +40,8 @@
             </div>
         </div>
     </div>
-    <script src='assets/jquery-3.3.1.js'></script>
-    <script src='assets/bootstrap/js/bootstrap.js'></script>
+    <script src='assets/jquery-3.3.1.min.js'></script>
+    <script src='assets/bootstrap/js/bootstrap.min.js'></script>
     <script>
         $(function() {
             $("form").submit(function(e) {
