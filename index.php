@@ -9,6 +9,17 @@
 </head>
 
 <body>
+    <?php 
+    if (!empty($_POST['password']) && !empty($_POST['username'])) {
+        if($_POST['password']=='123' && $_POST['username']=='admin'){
+            header('Location: http://localhost/workspace/Al-Boughaz/admin.php');
+            exit();
+        }else {
+            header( "Location: http://localhost/workspace/Al-Boughaz/index.php" );
+            exit();
+        }
+    }
+    ?>
     <div class='container'>
         <div id="html">
             <button id="logInButton" data-toggle="modal" data-backdrop="false" href="#form" class="btn btn-primary col-xs-2 col-xs-push-5 text-center">Log in</button>
@@ -23,12 +34,12 @@
                     <div class="modal-body">
                         <form action="index.php">
                             <div class="form-group">
-                                <label for="name">Username</label>
+                                <label for="username">Username</label>
                                 <input type="text" class="form-control" name="username" id="username" placeholder="Username">
                             </div>
                             <div class="form-group">
-                                <label for="email">Password</label>
-                                <input type="email" class="form-control" name="password" id="password" placeholder="Password"> </div>
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Password"> </div>
 
                             <button type="submit" class="btn btn-default">Enter</button>
                         </form>
