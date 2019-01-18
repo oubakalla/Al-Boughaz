@@ -1,0 +1,13 @@
+#adminPicture{
+    width: 100px;
+    height: 100px;
+}
+
+#logOutButton{
+    margin-top: 15px;
+}
+
+#adminName{
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
