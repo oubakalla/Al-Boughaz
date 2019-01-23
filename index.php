@@ -12,6 +12,9 @@
     <?php 
     if (!empty($_POST['password']) && !empty($_POST['username'])) {
         if($_POST['password']=='123' && $_POST['username']=='admin'){
+            session_start();
+            $_SESSION["password"]="123";
+            $_SESSION["username"]="admin";
             header('Location: http://localhost/workspace/Al-Boughaz/admin.php');
             exit();
         }else {
@@ -32,7 +35,7 @@
                         <h4 class="modal-title pull-left">Log in:</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="index.php">
+                        <form action="./index.php" method="POST">
                             <div class="form-group">
                                 <label for="username">Username</label>
                                 <input type="text" class="form-control" name="username" id="username" placeholder="Username">

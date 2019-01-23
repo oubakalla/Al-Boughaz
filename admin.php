@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
+<?php
+if (isset($_SESSION['password']) && isset($_SESSION['username'])) {
+    if($_SESSION['password']!=='123' && $_SESSION['username']!=='admin'){
+        header( "Location: http://localhost/workspace/Al-Boughaz/index.php" );
+    }
+}
+?>
     <div class="container">
         <div class="row">
             <h1 class="col-xs-6">Administration Space</h1>
