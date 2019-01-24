@@ -11,14 +11,11 @@
 <body>
     <?php 
     if (!empty($_POST['password']) && !empty($_POST['username'])) {
-        if($_POST['password']=='123' && $_POST['username']=='admin'){
+        if($_POST['password']=='123a' && $_POST['username']=='admin'){
             session_start();
-            $_SESSION["password"]="123";
+            $_SESSION["password"]="123a";
             $_SESSION["username"]="admin";
-            header('Location: http://localhost/workspace/Al-Boughaz/admin.php');
-            exit();
-        }else {
-            header( "Location: http://localhost/workspace/Al-Boughaz/index.php" );
+            header("Location: ./admin.php");
             exit();
         }
     }

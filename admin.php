@@ -11,9 +11,19 @@
 <body>
 <?php
 if (isset($_SESSION['password']) && isset($_SESSION['username'])) {
-    if($_SESSION['password']!=='123' && $_SESSION['username']!=='admin'){
-        header( "Location: http://localhost/workspace/Al-Boughaz/index.php" );
+    if($_SESSION['password']!=='123a' || $_SESSION['username']!=='admin'){
+        echo "<script>window.location.assign('./index.php')</script>";
+        exit();
+        unset($_SESSION['username']);    
+        unset($_SESSION['password']);
+        session_destroy();
     }
+    unset($_SESSION['username']);    
+    unset($_SESSION['password']);
+    session_destroy();
+}else{
+    echo "<script>window.location.assign('./index.php')</script>";
+    exit();
 }
 ?>
     <div class="container">
