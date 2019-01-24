@@ -15,8 +15,7 @@
             session_start();
             $_SESSION["password"]="123a";
             $_SESSION["username"]="admin";
-            header("Location: ./admin.php");
-            exit();
+            echo "<script>window.location.assign('./admin.php');</script>";
         }
     }
     ?>

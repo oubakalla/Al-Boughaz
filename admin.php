@@ -10,20 +10,13 @@
 </head>
 <body>
 <?php
-if (isset($_SESSION['password']) && isset($_SESSION['username'])) {
+if (true) {
     if($_SESSION['password']!=='123a' || $_SESSION['username']!=='admin'){
-        echo "<script>window.location.assign('./index.php')</script>";
-        exit();
-        unset($_SESSION['username']);    
-        unset($_SESSION['password']);
-        session_destroy();
+        echo "<script>window.location.assign('./index.php');</script>";
     }
-    unset($_SESSION['username']);    
-    unset($_SESSION['password']);
-    session_destroy();
 }else{
-    echo "<script>window.location.assign('./index.php')</script>";
-    exit();
+    echo "<script>alert('11');</script>";
+    echo "<script>window.location.assign('./index.php');</script>";
 }
 ?>
     <div class="container">
